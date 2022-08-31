@@ -2,14 +2,28 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { routesPaths } from './data/constants/routes';
 import { DefaultErrorComponent } from './components/shared/default-error/default-error.component';
+import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 
 const routes: Routes = [
   {
     path:'',
-    pathMatch:'full'
+    pathMatch:'full',
+    redirectTo:routesPaths.portfolio
   },
-  {path:'**',component:DefaultErrorComponent}
+  {
+    path:routesPaths.portfolio,
+    component:PortfolioComponent
+  },
+  {
+    path:routesPaths.login,
+    component:LoginComponent
+  },  
+  {
+    path:'**',
+    component:DefaultErrorComponent
+  }
 ];
 
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SkeletonComponent } from './components/layout/skeleton/skeleton.component';
@@ -15,6 +16,8 @@ import { ExperienceComponent } from './components/portfolio/experience/experienc
 import { EducationComponent } from './components/portfolio/education/education.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
+import { InterceptorService } from './services/interceptor.service';
 
 
 @NgModule({
@@ -29,16 +32,24 @@ import { SignupComponent } from './components/auth/signup/signup.component';
     ExperienceComponent,
     EducationComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
+    AppRoutingModule,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
+    },
+    {
+      provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
     }
   ],
   bootstrap: [AppComponent]
