@@ -18,6 +18,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
 import { InterceptorService } from './services/interceptor.service';
+import { TextEditorComponent } from './components/shared/text-editor/text-editor.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { InterceptorService } from './services/interceptor.service';
     EducationComponent,
     LoginComponent,
     SignupComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    TextEditorComponent
   ],
   imports: [
     BrowserModule,

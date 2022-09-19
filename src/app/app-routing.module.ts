@@ -20,6 +20,13 @@ const routes: Routes = [
     path:routesPaths.login,
     component:LoginComponent
   },  
+  { path: routesPaths.settings,
+  children:[
+      {
+          path:'',
+          loadChildren: ()=> import ('./modules/settings/settings.module').then((m)=>m.SettingsModule)
+      }
+  ]},   
   {
     path:'**',
     component:DefaultErrorComponent

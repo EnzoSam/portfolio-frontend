@@ -1,0 +1,28 @@
+<div class="container mt-1">
+    <h1>Datos Personales</h1>
+    <form *ngIf="person" (ngSubmit)="onSubmit()" class="col-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="person.name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="lastname" [(ngModel)]="person.lastname" name="lastname">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="person.address" name="address">
+        </div>        
+        <div class="mb-3">
+            <label for="about" class="form-label">Acerca de</label>
+            <input type="text" class="form-control" id="about" [(ngModel)]="person.about" name="about">
+        </div>      
+        <div class="mb-3">
+            <label  class="form-label">Imagen</label>
+            <app-upload-file (archivoSubido)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
+        </div>                      
+        <div class="mb-3">
+            <button class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>
