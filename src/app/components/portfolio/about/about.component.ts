@@ -10,25 +10,13 @@ import { PortfolioService } from 'src/app/services/porfolio.service';
 })
 export class AboutComponent implements OnInit {
 
-  @Input() person:IPerson;
-  isEditMode = false;
-  constructor(private _portfolioService:PortfolioService,
-    private _authService:AuthService) { 
-    this.person = _portfolioService.newPerson();
-
-
+  @Input() person?:IPerson;
+  constructor() { 
+    
   }
 
   ngOnInit(): void {
   }
 
-  isAuthenticated():boolean
-  {
-    return this._authService.isAuthenticated();
-  }
 
-  enableEdit()
-  {
-    this.isEditMode = !this.isEditMode;
-  }
 }

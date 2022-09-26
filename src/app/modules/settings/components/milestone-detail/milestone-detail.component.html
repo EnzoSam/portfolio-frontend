@@ -1,0 +1,24 @@
+<div class="container mt-1">
+    <h1>{{getTypeName()}}</h1>
+    <form *ngIf="milestone" (ngSubmit)="onSubmit()" class="col-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="milestone.name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="lastname" [(ngModel)]="milestone.description" name="lastname">
+        </div>
+        <div class="mb-3">
+            <label for="fromDate" class="form-label">Desde</label>
+            <input type="date" class="form-control" id="fromDate" [(ngModel)]="milestone.fromDate" name="fromDate">
+        </div>    
+        <div class="mb-3">
+            <label for="toDate" class="form-label">Hasta</label>
+            <input type="date" class="form-control" id="toDate" [(ngModel)]="milestone.toDate" name="toDate">
+        </div>                
+        <div class="mb-3">
+            <button class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>

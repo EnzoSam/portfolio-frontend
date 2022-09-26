@@ -14,7 +14,7 @@ export class PersonalDataComponent implements OnInit {
   urlUploads:string;
 
   constructor(private _portfolioService:PortfolioService) { 
-    this.urlUploads = environment.baseApiUrl + 'uploads';
+    this.urlUploads = environment.baseApiUrl + 'upload';
   }
 
   ngOnInit(): void {
@@ -30,11 +30,24 @@ export class PersonalDataComponent implements OnInit {
 
   onSubmit()
   {
+    if(!this.person)
+      return;
 
+    this._portfolioService.savePerson(this.person).subscribe(response=>
+      {
+          console.log(response);
+      },
+      error=>{
+        console.log(error);
+      })
   }
 
-  fileUploaded(event:any)
+  fileUploaded(event:string)
   {
-
+    console.log('archivo subido ' + event);
+    console.log(event);
+    if(this.person)
+      this.person.profileImage = event;
+    
   }
 }

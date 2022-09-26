@@ -1,8 +1,13 @@
 export const routesPaths = {    
     root: "",
-    personal_data:"personal-data"
+    personal_data:"personal-data",
+    milestons:"milestones",
+    mileston_detail:"milestone-detail",
+    milestone_new:"milestone-new",
+    place:"places"
   };
 
   export const routesParams = {    
     detail_id:"id",
+    type:"type"
   };

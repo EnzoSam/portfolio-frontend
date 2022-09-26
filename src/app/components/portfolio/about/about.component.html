@@ -1,7 +1,3 @@
-<div *ngIf="isAuthenticated()">
-    <i class="fa fa-pencil" aria-hidden="true" (click)="enableEdit()"></i>
-</div>
-<article *ngIf="!isEditMode">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id vulputate tortor. Quisque ultricies vel elit sit amet commodo. Sed mollis facilisis ex eu pretium. In metus tortor, tincidunt vitae vulputate ac, tempor sit amet libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ac volutpat leo, vitae sodales dolor. Maecenas eget volutpat tortor. Praesent pulvinar porttitor tempor. Nunc eros magna, faucibus at nulla non, auctor vulputate sem. Duis pulvinar nibh mauris, in sodales dui ultricies id. Pellentesque vitae est tellus. Nullam egestas at ipsum ut sagittis. Donec mollis nunc id metus tincidunt cursus. Aenean malesuada urna vitae eros ultrices, a facilisis lectus cursus. Etiam bibendum condimentum orci, et tempor urna scelerisque ac. Curabitur turpis eros, elementum et nunc in, interdum scelerisque lectus.
+<article *ngIf="person">
+    {{person.about}}
 </article>
-<app-text-editor *ngIf="isEditMode" (text)="person.about"></app-text-editor>

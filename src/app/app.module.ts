@@ -19,6 +19,8 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
 import { InterceptorService } from './services/interceptor.service';
 import { TextEditorComponent } from './components/shared/text-editor/text-editor.component';
+import { PortfolioService } from './services/porfolio.service';
+import { MilestoneService } from './services/milestone.service';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { TextEditorComponent } from './components/shared/text-editor/text-editor
   ],
   providers: [
     AppRoutingModule,
+    PortfolioService,
+    MilestoneService,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy

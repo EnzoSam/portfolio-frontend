@@ -7,7 +7,7 @@
         </div>
         <div class="mb-3">
             <label for="lastname" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="lastname" [(ngModel)]="person.lastname" name="lastname">
+            <input type="text" class="form-control" id="lastname" [(ngModel)]="person.lastName" name="lastname">
         </div>
         <div class="mb-3">
             <label for="address" class="form-label">Direccion</label>
@@ -19,7 +19,7 @@
         </div>      
         <div class="mb-3">
             <label  class="form-label">Imagen</label>
-            <app-upload-file (archivoSubido)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
+            <app-upload-file (fileUploaded)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
         </div>                      
         <div class="mb-3">
             <button class="btn btn-primary">Guardar</button>

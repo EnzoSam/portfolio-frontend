@@ -1,15 +1,13 @@
-import { IEducation } from "./ieducation";
-import { IExperience } from "./iexperience";
+import { IMilestone } from "./imilestone";
 import { ISkill } from "./iskills";
 
 export interface IPerson {
     id:any|undefined;
     name:string;
-    lastname:string;
+    lastName:string;
     about:string;
     address:string;
     profileImage:string;
-    experiencies:IExperience[];
-    educations:IEducation[];
+    milestones:IMilestone[];
     skills:ISkill[];
 }
