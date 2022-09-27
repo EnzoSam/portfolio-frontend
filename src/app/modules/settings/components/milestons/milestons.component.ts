@@ -6,11 +6,11 @@ import { MilestoneService } from 'src/app/services/milestone.service';
 import { routesParams, routesPaths } from '../../constants/routes';
 
 @Component({
-  selector: 'app-educations',
-  templateUrl: './educations.component.html',
-  styleUrls: ['./educations.component.css']
+  selector: 'app-milestons',
+  templateUrl: './milestons.component.html',
+  styleUrls: ['./milestons.component.css']
 })
-export class EducationsComponent implements OnInit {
+export class MilestonsComponent implements OnInit {
 
   paths = routesPaths;
   params = routesParams;
@@ -41,7 +41,6 @@ export class EducationsComponent implements OnInit {
       return;
     this._milestoneService.getMilestones(this.type).subscribe(data=>
       {
-        console.log(data);
         this.milestones = data;
       },
       error=>
@@ -53,8 +52,6 @@ export class EducationsComponent implements OnInit {
   delete(_milestone:any){
 
     this._milestoneService.deleteMilestone(_milestone).subscribe(data=>{
-      console.log(data);
-
       this.loadMilestons();
     },
     error=>

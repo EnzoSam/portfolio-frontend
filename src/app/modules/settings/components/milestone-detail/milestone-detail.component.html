@@ -6,9 +6,15 @@
             <input type="text" class="form-control" id="nombre" [(ngModel)]="milestone.name" name="name">
         </div>
         <div class="mb-3">
-            <label for="lastname" class="form-label">Descripcion</label>
-            <input type="text" class="form-control" id="lastname" [(ngModel)]="milestone.description" name="lastname">
+            <label for="description" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="milestone.description" name="description">
         </div>
+        <div class="mb-3">
+            <label for="place" class="form-label">Lugar</label>
+            <select [compareWith]="compareFn" type="text" class="form-select" id="place" [(ngModel)]="milestone.place" name="place">
+                <option *ngFor="let p of places" [ngValue]="p">{{p.name}}</option>
+            </select>
+        </div>        
         <div class="mb-3">
             <label for="fromDate" class="form-label">Desde</label>
             <input type="date" class="form-control" id="fromDate" [(ngModel)]="milestone.fromDate" name="fromDate">

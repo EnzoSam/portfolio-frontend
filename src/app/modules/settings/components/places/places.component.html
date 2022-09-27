@@ -1,1 +1,27 @@
-<p>places works!</p>
+<div class="container-fluid">
+    <h1>Lugares</h1>
+    <button class="btn btn-success" [routerLink]="['../' + paths.place_new]">Agregar</button>
+  
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of places">
+          <th scope="row">{{p.id}}</th>
+          <td>{{p.name}}</td>
+          <td>{{p.description}}</td>
+          <td> 
+            <i class="fa-solid fa-pen" 
+            [routerLink]="['../' + paths.place_detail , p.id]"></i>
+            <i class="fa-solid fa-trash" (click)="delete(p)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

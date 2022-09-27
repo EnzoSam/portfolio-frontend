@@ -6,10 +6,10 @@ import { PanelComponent } from './components/panel/panel.component';
 import { appRoutingProviders, routing } from './setting-routing';
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
-import { EducationsComponent } from './components/educations/educations.component';
-import { ExperienceComponent } from './components/experience/experience.component';
+import { MilestonsComponent } from './components/milestons/milestons.component';
 import { PlacesComponent } from './components/places/places.component';
 import { MilestoneDetailComponent } from './components/milestone-detail/milestone-detail.component';
+import { PlaceDetailComponent } from './components/place-detail/place-detail.component';
 
 
 
@@ -19,10 +19,10 @@ import { MilestoneDetailComponent } from './components/milestone-detail/mileston
     PanelComponent,
     PersonalDataComponent,
     UploadFileComponent,
-    EducationsComponent,
-    ExperienceComponent,
+    MilestonsComponent,
     PlacesComponent,
-    MilestoneDetailComponent
+    MilestoneDetailComponent,
+    PlaceDetailComponent
   ],
   imports: [
     CommonModule,

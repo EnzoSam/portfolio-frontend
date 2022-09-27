@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { milestones_type } from 'src/app/data/constants/portfolio';
 import { IMilestone } from 'src/app/data/interfaces/imilestone';
+import { IPlace } from 'src/app/data/interfaces/iplace';
 import { MilestoneService } from 'src/app/services/milestone.service';
+import { PlacesService } from 'src/app/services/places.service';
 import { routesParams, routesPaths } from '../../constants/routes';
 
 @Component({
@@ -15,11 +17,20 @@ export class MilestoneDetailComponent implements OnInit {
   milestone?: IMilestone;
   type?: string;
   paths = routesPaths;
+  places:IPlace[] = [];
 
   constructor(private _route: ActivatedRoute, private _router: Router,
-    private _milestoneService: MilestoneService) { }
+    private _milestoneService: MilestoneService,
+    private _placeService:PlacesService) { }
 
   ngOnInit(): void {
+
+    this.loadPlaces();
+  }
+
+  async loadData()
+  {
+    console.log(this.places);
     this._route.params.subscribe(parms => {
       
       if (parms[routesParams.detail_id]) {
@@ -31,7 +42,6 @@ export class MilestoneDetailComponent implements OnInit {
         if (this.type) {
           this.milestone = this._milestoneService.newMilestone(this.type.toString());
 
-        console.log(this.milestone);
         }
         else
         {
@@ -46,9 +56,10 @@ export class MilestoneDetailComponent implements OnInit {
 
     if(!this.milestone)
       return;
+
+      console.log(this.milestone);
     this._milestoneService.saveMilestone(this.milestone).subscribe(data=>
     {
-      console.log(data);
       this._router.navigate(['../settings/'+ this.paths.milestons, this.type]);
     },
     error=>
@@ -61,10 +72,26 @@ export class MilestoneDetailComponent implements OnInit {
 
     this._milestoneService.getMilestone(id).subscribe(data=>
       {
-        console.log(data);
         this.milestone = data;
+        this.type = this.milestone?.type;
+
+        console.log(this.milestone);
       },
       error=>{
+        console.log(error);
+      })
+  }
+
+  loadPlaces()
+  {
+    this._placeService.getPlaces().subscribe(data=>
+      {
+        this.places = data;
+
+        this.loadData();
+      },
+      error=>
+      {
         console.log(error);
       })
   }
@@ -76,4 +103,11 @@ export class MilestoneDetailComponent implements OnInit {
       return "Experiencia";
     else return "";
   }
+
+  compareFn(a:any, b:any) {
+    if(a != null && b != null)
+      return a.id === b.id;
+    else
+        return false;
+ }
 }

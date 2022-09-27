@@ -1,11 +1,10 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { EducationComponent } from 'src/app/components/portfolio/education/education.component';
 import { MilestoneDetailComponent } from './components/milestone-detail/milestone-detail.component';
-import { EducationsComponent } from './components/educations/educations.component';
-import { ExperienceComponent } from './components/experience/experience.component';
+import { MilestonsComponent } from './components/milestons/milestons.component';
 import { PanelComponent } from './components/panel/panel.component';
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
+import { PlaceDetailComponent } from './components/place-detail/place-detail.component';
 import { PlacesComponent } from './components/places/places.component';
 import { routesParams, routesPaths } from './constants/routes';
 
@@ -15,8 +14,13 @@ const appRoutes: Routes = [
     { path: routesPaths.root, component: PanelComponent, 
         children:[
                 {path:routesPaths.personal_data,component:PersonalDataComponent},
+
                 {path:routesPaths.place,component:PlacesComponent},
-                {path:routesPaths.milestons + '/:' + routesParams.type,component:EducationsComponent},
+                {path:routesPaths.place_detail + '/:' + routesParams.detail_id,
+                 component:PlaceDetailComponent},                
+                {path:routesPaths.place_new, component:PlaceDetailComponent},         
+                  
+                {path:routesPaths.milestons + '/:' + routesParams.type,component:MilestonsComponent},
                 {path:routesPaths.mileston_detail + '/:' + routesParams.detail_id,
                  component:MilestoneDetailComponent},                
                 {path:routesPaths.milestone_new + "/:" + routesParams.type, 

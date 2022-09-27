@@ -4,7 +4,9 @@ export const routesPaths = {
     milestons:"milestones",
     mileston_detail:"milestone-detail",
     milestone_new:"milestone-new",
-    place:"places"
+    place:"places",
+    place_new:"places-new",
+    place_detail:"places-detail"
   };
 
   export const routesParams = {    

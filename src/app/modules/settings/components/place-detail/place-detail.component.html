@@ -1,0 +1,20 @@
+<div class="container mt-1">
+    <h1>Lugar</h1>
+    <form *ngIf="place" (ngSubmit)="onSubmit()" class="col-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="place.name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="place.description" name="description">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Imagen</label>
+            <app-upload-file (fileUploaded)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
+        </div>                
+        <div class="mb-3">
+            <button class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>
