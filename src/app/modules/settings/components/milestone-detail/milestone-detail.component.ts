@@ -3,9 +3,9 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { milestones_type } from 'src/app/data/constants/portfolio';
 import { IMilestone } from 'src/app/data/interfaces/imilestone';
 import { IPlace } from 'src/app/data/interfaces/iplace';
-import { MilestoneService } from 'src/app/services/milestone.service';
-import { PlacesService } from 'src/app/services/places.service';
+import { PlacesService } from 'src/app/modules/settings/services/places.service';
 import { routesParams, routesPaths } from '../../constants/routes';
+import { MilestoneService } from '../../services/milestone.service';
 
 @Component({
   selector: 'app-milestone-detail',

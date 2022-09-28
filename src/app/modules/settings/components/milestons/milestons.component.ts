@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { milestones_type } from 'src/app/data/constants/portfolio';
 import { IMilestone } from 'src/app/data/interfaces/imilestone';
-import { MilestoneService } from 'src/app/services/milestone.service';
 import { routesParams, routesPaths } from '../../constants/routes';
+import { MilestoneService } from '../../services/milestone.service';
 
 @Component({
   selector: 'app-milestons',

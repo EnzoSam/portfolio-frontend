@@ -1,7 +1,7 @@
-<div class="container-fluid m-0 p-0" *ngIf="person">
+<div class="container-fluid m-0 p-0" *ngIf="portfolio">
 
     <app-banner></app-banner>
-    <app-about [person]="person"></app-about>
+    <app-about [person]="portfolio.person"></app-about>
     <app-experience></app-experience>
     <app-education></app-education>
 

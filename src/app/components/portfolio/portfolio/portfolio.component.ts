@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IPerson } from 'src/app/data/interfaces/iperson';
+import { IPortfolio } from 'src/app/data/interfaces/iportfolio';
 import { PortfolioService } from 'src/app/services/porfolio.service';
 
 @Component({
@@ -10,12 +11,12 @@ import { PortfolioService } from 'src/app/services/porfolio.service';
 })
 export class PortfolioComponent implements OnInit,OnDestroy {
 
-  person?: IPerson ;
+  portfolio?: IPortfolio ;
   personSubscription:Subscription;
   constructor(private _portFolioService: PortfolioService) { 
 
-    _portFolioService.loadPerson();
-    this.personSubscription = _portFolioService.onPersonChange().subscribe(value=>this.person = value);
+    _portFolioService.loadPortfolio();
+    this.personSubscription = _portFolioService.onPortfolioChanged().subscribe(value=>this.portfolio = value);
   }
 
   ngOnInit(): void {

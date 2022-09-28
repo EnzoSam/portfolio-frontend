@@ -20,7 +20,6 @@ import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.c
 import { InterceptorService } from './services/interceptor.service';
 import { TextEditorComponent } from './components/shared/text-editor/text-editor.component';
 import { PortfolioService } from './services/porfolio.service';
-import { MilestoneService } from './services/milestone.service';
 
 
 @NgModule({
@@ -49,7 +48,6 @@ import { MilestoneService } from './services/milestone.service';
   providers: [
     AppRoutingModule,
     PortfolioService,
-    MilestoneService,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy

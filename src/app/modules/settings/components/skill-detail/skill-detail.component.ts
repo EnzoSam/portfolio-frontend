@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IPlace } from 'src/app/data/interfaces/iplace';
-import { PlacesService } from 'src/app/modules/settings/services/places.service';
+import { ISkill } from 'src/app/data/interfaces/iskills';
 import { environment } from 'src/environments/environment';
 import { routesParams, routesPaths } from '../../constants/routes';
+import { SkillsService } from '../../services/skill.service';
 
 @Component({
-  selector: 'app-place-detail',
-  templateUrl: './place-detail.component.html',
-  styleUrls: ['./place-detail.component.css']
+  selector: 'app-skill-detail',
+  templateUrl: './skill-detail.component.html',
+  styleUrls: ['./skill-detail.component.css']
 })
-export class PlaceDetailComponent implements OnInit {
+export class SkillDetailComponent implements OnInit {
 
  
-  place?: IPlace;
+  skill?: ISkill;
   paths = routesPaths;
   urlUploads:string;
 
   constructor(private _route: ActivatedRoute, private _router: Router,
-    private _placeService: PlacesService) { 
+    private _skillService: SkillsService) { 
       this.urlUploads = environment.baseApiUrl + 'upload';
     }
 
@@ -26,22 +26,22 @@ export class PlaceDetailComponent implements OnInit {
     this._route.params.subscribe(parms => {
       
       if (parms[routesParams.detail_id]) {
-        this.loadPlace(+parms[routesParams.detail_id]);
+        this.loadSkill(+parms[routesParams.detail_id]);
       }
       else {
 
-          this.place = this._placeService.newPlace();
+          this.skill = this._skillService.newSkill();
 
     }});
   }
 
   onSubmit() {
 
-    if(!this.place)
+    if(!this.skill)
       return;
-    this._placeService.save(this.place).subscribe(data=>
+    this._skillService.save(this.skill).subscribe(data=>
     {
-      this._router.navigate(['../settings/'+ this.paths.place]);
+      this._router.navigate(['../settings/'+ this.paths.skills]);
     },
     error=>
     {
@@ -49,11 +49,11 @@ export class PlaceDetailComponent implements OnInit {
     });
   }
 
-  loadPlace(id: number) {
+  loadSkill(id: number) {
 
-    this._placeService.getPlace(id).subscribe(data=>
+    this._skillService.getSkill(id).subscribe(data=>
       {
-        this.place = data;
+        this.skill = data;
       },
       error=>{
         console.log(error);
@@ -63,8 +63,8 @@ export class PlaceDetailComponent implements OnInit {
 
   fileUploaded(event:string)
   {
-    if(this.place)
-      this.place.image = event;
+    if(this.skill)
+      this.skill.image = event;
     
   }  
 }

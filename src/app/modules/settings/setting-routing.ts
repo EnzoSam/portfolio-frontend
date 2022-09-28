@@ -6,6 +6,8 @@ import { PanelComponent } from './components/panel/panel.component';
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
 import { PlaceDetailComponent } from './components/place-detail/place-detail.component';
 import { PlacesComponent } from './components/places/places.component';
+import { SkillDetailComponent } from './components/skill-detail/skill-detail.component';
+import { SkillsComponent } from './components/skills/skills.component';
 import { routesParams, routesPaths } from './constants/routes';
 
 
@@ -18,7 +20,12 @@ const appRoutes: Routes = [
                 {path:routesPaths.place,component:PlacesComponent},
                 {path:routesPaths.place_detail + '/:' + routesParams.detail_id,
                  component:PlaceDetailComponent},                
-                {path:routesPaths.place_new, component:PlaceDetailComponent},         
+                {path:routesPaths.place_new, component:PlaceDetailComponent},      
+                
+                {path:routesPaths.skills,component:SkillsComponent},
+                {path:routesPaths.skills_detail + '/:' + routesParams.detail_id,
+                 component:SkillDetailComponent},                
+                {path:routesPaths.skills_new, component:SkillDetailComponent},  
                   
                 {path:routesPaths.milestons + '/:' + routesParams.type,component:MilestonsComponent},
                 {path:routesPaths.mileston_detail + '/:' + routesParams.detail_id,

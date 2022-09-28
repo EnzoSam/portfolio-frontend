@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IPlace } from 'src/app/data/interfaces/iplace';
-import { PlacesService } from 'src/app/services/places.service';
+import { PlacesService } from 'src/app/modules/settings/services/places.service';
 import { routesParams, routesPaths } from '../../constants/routes';
 
 @Component({

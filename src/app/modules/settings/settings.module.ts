@@ -10,6 +10,11 @@ import { MilestonsComponent } from './components/milestons/milestons.component';
 import { PlacesComponent } from './components/places/places.component';
 import { MilestoneDetailComponent } from './components/milestone-detail/milestone-detail.component';
 import { PlaceDetailComponent } from './components/place-detail/place-detail.component';
+import { MilestoneService } from './services/milestone.service';
+import { PlacesService } from './services/places.service';
+import { SkillsService } from './services/skill.service';
+import { SkillDetailComponent } from './components/skill-detail/skill-detail.component';
+import { SkillsComponent } from './components/skills/skills.component';
 
 
 
@@ -22,7 +27,9 @@ import { PlaceDetailComponent } from './components/place-detail/place-detail.com
     MilestonsComponent,
     PlacesComponent,
     MilestoneDetailComponent,
-    PlaceDetailComponent
+    PlaceDetailComponent,
+    SkillDetailComponent,
+    SkillsComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +37,12 @@ import { PlaceDetailComponent } from './components/place-detail/place-detail.com
     ReactiveFormsModule,
     routing
   ],
-  providers: [appRoutingProviders] 
+  providers: 
+  [
+    appRoutingProviders,
+    MilestoneService,
+    PlacesService,
+    SkillsService
+  ] 
 })
 export class SettingsModule { }

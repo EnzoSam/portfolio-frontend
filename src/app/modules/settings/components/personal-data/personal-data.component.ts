@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IPerson } from 'src/app/data/interfaces/iperson';
 import { PortfolioService } from 'src/app/services/porfolio.service';
 import { environment } from 'src/environments/environment';
+import { PersonService } from '../../services/person.service';
 
 @Component({
   selector: 'app-personal-data',
@@ -13,14 +14,14 @@ export class PersonalDataComponent implements OnInit {
   person?: IPerson;
   urlUploads:string;
 
-  constructor(private _portfolioService:PortfolioService) { 
+  constructor(private _personService:PersonService) { 
     this.urlUploads = environment.baseApiUrl + 'upload';
   }
 
   ngOnInit(): void {
-    this._portfolioService.getPortfolioPerson().subscribe(person=>
+    this._personService.getPerson().subscribe(data=>
       {
-        this.person = person;
+        this.person = data;
       },
       error=>
       {
@@ -33,7 +34,7 @@ export class PersonalDataComponent implements OnInit {
     if(!this.person)
       return;
 
-    this._portfolioService.savePerson(this.person).subscribe(response=>
+    this._personService.save(this.person).subscribe(response=>
       {
           console.log(response);
       },

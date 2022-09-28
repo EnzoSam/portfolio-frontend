@@ -6,7 +6,10 @@ export const routesPaths = {
     milestone_new:"milestone-new",
     place:"places",
     place_new:"places-new",
-    place_detail:"places-detail"
+    place_detail:"places-detail",
+    skills:"skills",
+    skills_new:"skills-new",
+    skills_detail:"skill-detail"
   };
 
   export const routesParams = {    

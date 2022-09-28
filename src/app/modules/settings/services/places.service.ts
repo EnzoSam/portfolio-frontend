@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IPlace } from '../data/interfaces/iplace';
-import { BaseService } from './baseService';
+import { IPlace } from '../../../data/interfaces/iplace';
+import { BaseService } from '../../../services/baseService';
 
 @Injectable({
   providedIn: 'root'

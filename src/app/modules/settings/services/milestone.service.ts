@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IMilestone } from '../data/interfaces/imilestone';
-import { BaseService } from './baseService';
+import { IMilestone } from 'src/app/data/interfaces/imilestone';
+import { BaseService } from 'src/app/services/baseService';
 
 @Injectable({
   providedIn: 'root'

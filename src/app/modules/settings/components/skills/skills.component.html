@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <h1>Habilidades</h1>
+    <button class="btn btn-success" [routerLink]="['../' + paths.skills_new]">Agregar</button>
+  
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Nivel</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of skills">
+          <th scope="row">{{s.id}}</th>
+          <td>{{s.name}}</td>
+          <td>{{s.level}}</td>
+          <td> 
+            <i class="fa-solid fa-pen" 
+            [routerLink]="['../' + paths.skills_detail , s.id]"></i>
+            <i class="fa-solid fa-trash" (click)="delete(s)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

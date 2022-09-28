@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { IPerson } from '../data/interfaces/iperson';
 import {environment} from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { IPortfolio } from '../data/interfaces/iportfolio';
 
 @Injectable({
   providedIn: 'root'
@@ -18,31 +19,19 @@ export class PortfolioService {
     this.headers = new HttpHeaders().set('Content-Type','application/json');    
   }
 
-  public newPerson():IPerson
+
+
+  public getPortfolio():Observable<IPortfolio>
   {
-    return {
-      id:undefined,
-      name:'',
-      lastName:'',
-      about:'',
-      address:'',
-      profileImage:'',
-      milestones:[],
-      skills:[]
-    }
+    return this._http.get<IPortfolio>(this.apiUrl + "portfolio",{headers:this.headers});
   }
 
-  public getPortfolioPerson():Observable<IPerson>
+  public  loadPortfolio()
   {
-    return this._http.get<IPerson>(this.apiUrl + "portfolio",{headers:this.headers});
-  }
-
-  public  loadPerson()
-  {
-     this.getPortfolioPerson().subscribe(person=>
+     this.getPortfolio().subscribe(portfolio=>
       {
-        console.log(person);
-        this.portfolioPerson.next(person);
+        console.log(portfolio);
+        this.portfolioPerson.next(portfolio);
       },
       error =>
       {
@@ -50,13 +39,9 @@ export class PortfolioService {
       })
   }
 
-  onPersonChange(): Observable<IPerson>
+  onPortfolioChanged(): Observable<IPortfolio>
   {
-    return this.portfolioPerson.asObservable()
+    return this.portfolioPerson.asObservable();
   }
 
-  savePerson(person: IPerson):Observable<any>
-  {
-    return this._http.post(this.apiUrl +"person/save",person,{headers:this.headers});
-  }
 }

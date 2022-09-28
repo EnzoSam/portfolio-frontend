@@ -1,0 +1,20 @@
+<div class="container mt-1">
+    <h1>Habilidad</h1>
+    <form *ngIf="skill" (ngSubmit)="onSubmit()" class="col-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="skill.name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="level" class="form-label">Nivel</label>
+            <input type="text" class="form-control" id="level" [(ngModel)]="skill.level" name="level">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Imagen</label>
+            <app-upload-file (fileUploaded)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
+        </div>                
+        <div class="mb-3">
+            <button class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>
