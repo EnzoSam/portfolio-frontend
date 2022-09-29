@@ -9,7 +9,10 @@ export const routesPaths = {
     place_detail:"places-detail",
     skills:"skills",
     skills_new:"skills-new",
-    skills_detail:"skill-detail"
+    skills_detail:"skill-detail",
+    contacts:"contacts",
+    contact_new:"contact-new",
+    contact_detail:"contact-detail"    
   };
 
   export const routesParams = {    

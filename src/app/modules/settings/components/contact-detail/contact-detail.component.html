@@ -1,0 +1,24 @@
+<div class="container mt-1">
+    <h1>Contacto</h1>
+    <form *ngIf="contact" (ngSubmit)="onSubmit()" class="col-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="contact.name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contacto</label>
+            <input type="text" class="form-control" id="contact" [(ngModel)]="contact.contact" name="contact">
+        </div>        
+        <div class="mb-3">
+            <label for="type" class="form-label">Tipo</label>
+            <input type="text" class="form-control" id="type" [(ngModel)]="contact.type" name="type">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Imagen</label>
+            <app-upload-file (fileUploaded)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
+        </div>                
+        <div class="mb-3">
+            <button class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>

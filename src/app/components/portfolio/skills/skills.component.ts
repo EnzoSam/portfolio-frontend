@@ -4,11 +4,11 @@ import { IPortfolio } from 'src/app/data/interfaces/iportfolio';
 import { PortfolioService } from 'src/app/services/porfolio.service';
 
 @Component({
-  selector: 'app-education',
-  templateUrl: './education.component.html',
-  styleUrls: ['./education.component.css']
+  selector: 'app-skills',
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.css']
 })
-export class EducationComponent implements OnInit,OnDestroy {
+export class SkillsComponent implements OnInit,OnDestroy {
   
   portfolio?: IPortfolio ;
   personSubscription:Subscription;

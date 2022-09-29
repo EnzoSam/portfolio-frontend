@@ -15,6 +15,9 @@ import { PlacesService } from './services/places.service';
 import { SkillsService } from './services/skill.service';
 import { SkillDetailComponent } from './components/skill-detail/skill-detail.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { ContactService } from './services/contact.service';
 
 
 
@@ -29,7 +32,9 @@ import { SkillsComponent } from './components/skills/skills.component';
     MilestoneDetailComponent,
     PlaceDetailComponent,
     SkillDetailComponent,
-    SkillsComponent
+    SkillsComponent,
+    ContactDetailComponent,
+    ContactsComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +47,8 @@ import { SkillsComponent } from './components/skills/skills.component';
     appRoutingProviders,
     MilestoneService,
     PlacesService,
-    SkillsService
+    SkillsService,
+    ContactService
   ] 
 })
 export class SettingsModule { }

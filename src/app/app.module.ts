@@ -20,6 +20,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.c
 import { InterceptorService } from './services/interceptor.service';
 import { TextEditorComponent } from './components/shared/text-editor/text-editor.component';
 import { PortfolioService } from './services/porfolio.service';
+import { SkillsComponent } from './components/portfolio/skills/skills.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PortfolioService } from './services/porfolio.service';
     LoginComponent,
     SignupComponent,
     PortfolioComponent,
-    TextEditorComponent
+    TextEditorComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

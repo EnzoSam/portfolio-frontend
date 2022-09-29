@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <h1>Contactos</h1>
+    <button class="btn btn-success" [routerLink]="['../' + paths.contact_new]">Agregar</button>
+  
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Type</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of contacts">
+          <th scope="row">{{c.id}}</th>
+          <td>{{c.name}}</td>
+          <td>{{c.type}</td>
+          <td> 
+            <i class="fa-solid fa-pen" 
+            [routerLink]="['../' + paths.contact_detail , c.id]"></i>
+            <i class="fa-solid fa-trash" (click)="delete(c)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

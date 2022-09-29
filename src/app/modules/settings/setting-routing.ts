@@ -1,5 +1,7 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 import { MilestoneDetailComponent } from './components/milestone-detail/milestone-detail.component';
 import { MilestonsComponent } from './components/milestons/milestons.component';
 import { PanelComponent } from './components/panel/panel.component';
@@ -16,6 +18,11 @@ const appRoutes: Routes = [
     { path: routesPaths.root, component: PanelComponent, 
         children:[
                 {path:routesPaths.personal_data,component:PersonalDataComponent},
+
+                {path:routesPaths.contacts,component:ContactsComponent},
+                {path:routesPaths.contact_detail + '/:' + routesParams.detail_id,
+                 component:ContactDetailComponent},                
+                {path:routesPaths.contact_new, component:ContactDetailComponent},  
 
                 {path:routesPaths.place,component:PlacesComponent},
                 {path:routesPaths.place_detail + '/:' + routesParams.detail_id,
