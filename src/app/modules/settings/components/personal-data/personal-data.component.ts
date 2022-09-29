@@ -13,9 +13,11 @@ export class PersonalDataComponent implements OnInit {
 
   person?: IPerson;
   urlUploads:string;
+  urlImages:string;
 
   constructor(private _personService:PersonService) { 
     this.urlUploads = environment.baseApiUrl + 'upload';
+    this.urlImages = environment.baseApiImages;
   }
 
   ngOnInit(): void {

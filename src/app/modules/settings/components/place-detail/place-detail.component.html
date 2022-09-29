@@ -12,7 +12,12 @@
         <div class="mb-3">
             <label  class="form-label">Imagen</label>
             <app-upload-file (fileUploaded)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
-        </div>                
+        </div>            
+        <div class="mb-3">
+            <div *ngIf="place.image">
+              <img [src]="urlImages +'/'+ place.image" class="avatar_edit">
+            </div>
+          </div>                
         <div class="mb-3">
             <button class="btn btn-primary">Guardar</button>
         </div>

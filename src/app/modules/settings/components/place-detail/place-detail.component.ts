@@ -16,10 +16,12 @@ export class PlaceDetailComponent implements OnInit {
   place?: IPlace;
   paths = routesPaths;
   urlUploads:string;
+  urlImages:string;
 
   constructor(private _route: ActivatedRoute, private _router: Router,
     private _placeService: PlacesService) { 
       this.urlUploads = environment.baseApiUrl + 'upload';
+      this.urlImages = environment.baseApiImages;
     }
 
   ngOnInit(): void {
