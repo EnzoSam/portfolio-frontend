@@ -1,3 +1,14 @@
-<div class="banner">
-
+<div class="container">
+<div *ngIf="portfolio" class="banner col-8 align-self-center">    
+    <div class="row">
+        <div class="col ms-5 mt-5">
+            <h1 class="display-1">{{portfolio.person.name + ' ' + portfolio.person.lastName}} </h1>
+            <h2 class="display-3">{{portfolio.person.profession}}</h2>
+        </div>
+        <div class="col-3 ps-5">
+            <img [src]="urlImages + '/' + portfolio.person.profileImage" alt="">
+        </div>
+    </div>
+    
+</div>
 </div>

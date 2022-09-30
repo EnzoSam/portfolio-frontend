@@ -1,6 +1,4 @@
-<div class="container-fluid about pt-3">
+<div class="container-fluid col-8 pt-3">
     <h1 class="d-flex justify-content-center">Habilidades</h1>
-    <ul class="list-group list-group-flush">
-        <li *ngFor="let e of portfolio?.skills" class="list-group-item"> {{e.name}}</li>
-    </ul>
+    <app-skill-card [skill]="s"  *ngFor="let s of portfolio?.skills" ></app-skill-card>
 </div>

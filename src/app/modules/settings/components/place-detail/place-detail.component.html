@@ -10,6 +10,10 @@
             <input type="text" class="form-control" id="description" [(ngModel)]="place.description" name="description">
         </div>
         <div class="mb-3">
+            <label for="address" class="form-label">Lugar</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="place.address" name="address">
+        </div>        
+        <div class="mb-3">
             <label  class="form-label">Imagen</label>
             <app-upload-file (fileUploaded)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
         </div>            

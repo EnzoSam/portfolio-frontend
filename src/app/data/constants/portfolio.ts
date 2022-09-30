@@ -1,4 +1,5 @@
 export const milestones_type = {    
     EDUCATION: "EDUCATION",
-    EXPERIENCE:"EXPERIENCE"
+    EXPERIENCE:"EXPERIENCE",
+    PROJECT:"PROJECT"
   };

@@ -23,6 +23,7 @@ export class PersonService extends BaseService{
       about:'',
       address:'',
       profileImage:'',
+      profession:'',
       milestones:[],
       skills:[]
     }

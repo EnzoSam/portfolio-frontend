@@ -1,0 +1,10 @@
+<div *ngIf="education" class="row mt-3 mb-3">    
+    <div class="col-3">
+        {{education.toDate | date: 'dd/MM/yyyy'}}
+    </div>
+    <div class="col">
+        <h3>{{education.name}}</h3>
+        <h5>{{education.place?.name}}</h5>
+        <h5>{{education.place?.address}}</h5>
+    </div>
+</div>

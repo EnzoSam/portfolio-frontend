@@ -8,6 +8,7 @@ export interface IPortfolio {
     person:IPerson,
     educations:IMilestone[],
     experiences:IMilestone[],
+    projects:IMilestone[],
     skills:ISkill[],
     contacts:IContact[]
 }

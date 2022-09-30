@@ -4,6 +4,7 @@ import { milestones_type } from 'src/app/data/constants/portfolio';
 import { IMilestone } from 'src/app/data/interfaces/imilestone';
 import { IPlace } from 'src/app/data/interfaces/iplace';
 import { PlacesService } from 'src/app/modules/settings/services/places.service';
+import { environment } from 'src/environments/environment';
 import { routesParams, routesPaths } from '../../constants/routes';
 import { MilestoneService } from '../../services/milestone.service';
 
@@ -18,10 +19,18 @@ export class MilestoneDetailComponent implements OnInit {
   type?: string;
   paths = routesPaths;
   places:IPlace[] = [];
+  urlImages:string;
+  urlUploads:string;
 
   constructor(private _route: ActivatedRoute, private _router: Router,
     private _milestoneService: MilestoneService,
-    private _placeService:PlacesService) { }
+    private _placeService:PlacesService) { 
+
+      this.urlImages = environment.baseApiImages;
+      this.urlUploads = environment.baseApiUrl+'upload';
+    }
+
+
 
   ngOnInit(): void {
 
@@ -110,4 +119,11 @@ export class MilestoneDetailComponent implements OnInit {
     else
         return false;
  }
+
+ fileUploaded(event:string)
+ {
+   if(this.milestone)
+     this.milestone.image = event;
+   
+ }  
 }

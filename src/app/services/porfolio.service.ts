@@ -19,8 +19,6 @@ export class PortfolioService {
     this.headers = new HttpHeaders().set('Content-Type','application/json');    
   }
 
-
-
   public getPortfolio():Observable<IPortfolio>
   {
     return this._http.get<IPortfolio>(this.apiUrl + "portfolio",{headers:this.headers});

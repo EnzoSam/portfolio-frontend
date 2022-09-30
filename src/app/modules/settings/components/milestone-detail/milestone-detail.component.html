@@ -24,6 +24,15 @@
             <input type="date" class="form-control" id="toDate" [(ngModel)]="milestone.toDate" name="toDate">
         </div>                
         <div class="mb-3">
+            <label  class="form-label">Imagen</label>
+            <app-upload-file (fileUploaded)="fileUploaded($event)" [urlBase]="urlUploads"></app-upload-file>  
+        </div>            
+        <div class="mb-3">
+            <div *ngIf="milestone.image">
+              <img [src]="urlImages +'/'+ milestone.image" class="avatar_edit">
+            </div>
+          </div>         
+        <div class="mb-3">
             <button class="btn btn-primary">Guardar</button>
         </div>
     </form>

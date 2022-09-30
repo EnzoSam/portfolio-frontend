@@ -8,8 +8,8 @@
       <app-social-networks></app-social-networks>
     </div>
     <div class="col-1 d-flex justify-content-end m-0 p-0">
-      <i *ngIf="isAuthenticated()" class="fa fa-cog" [routerLink]="routesPaths.settings"></i>
-      <button *ngIf="!isAuthenticated()" type="button" class="btn btn-success" [routerLink]="routesPaths.login">Login</button>
-      <button  *ngIf="isAuthenticated()" type="button" class="btn btn-secondary" (click)="logout()">Salir</button>
+      <i *ngIf="isAuthenticated()" (click)="logout()" class="me-3 fa fa-sign-out" aria-label="Cerrar Sesion"></i>
+      <i *ngIf="isAuthenticated()" class="me-3 fa fa-cog" [routerLink]="routesPaths.settings"></i>
+      <i  *ngIf="!isAuthenticated()" [routerLink]="routesPaths.login"  class="fa fa-sign-in" aria-hidden="true"></i>
     </div>
 </nav>

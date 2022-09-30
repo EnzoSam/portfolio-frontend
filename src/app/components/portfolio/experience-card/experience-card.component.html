@@ -1,0 +1,6 @@
+<div class="col-4">
+    <div *ngIf="experience" class="row mt-3 mb-3">
+        <img class="col" [src]="urlImages + '/' + experience.place?.image">
+        <h5 class="col">{{experience.place?.name}}</h5>
+    </div>
+</div>

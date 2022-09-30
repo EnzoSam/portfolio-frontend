@@ -8,4 +8,5 @@ export interface IMilestone {
     name:string;
     description:string;
     type:string;
+    image:string;
 }

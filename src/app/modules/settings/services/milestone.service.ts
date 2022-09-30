@@ -23,7 +23,8 @@ export class MilestoneService extends BaseService{
       description:'',
       fromDate:new Date(),
       toDate:new Date(),
-      type:type
+      type:type,
+      image:''
     };
   }
 

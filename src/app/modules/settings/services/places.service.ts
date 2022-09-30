@@ -21,6 +21,7 @@ export class PlacesService extends BaseService{
       name:'',
       description:'',
       image:'',
+      address:'',
       web:''
     };
   }

@@ -1,0 +1,6 @@
+<div class="container-fluid  pt-3 col-8">
+    <h1 class="d-flex justify-content-start mb-3">Proyectos</h1>
+    <div class="row">
+        <app-project-card class="col-3" *ngFor="let p of portfolio?.projects" [project]="p"></app-project-card>
+    </div>
+</div>

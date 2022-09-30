@@ -1,4 +1,14 @@
+html body {
+    background-color: #2D2E32;
+    color: #FEFEFE;
+}
+
+
 .avatar_edit{
     width: 80px;
     margin-bottom: 10px;
 }  
+
+i{
+    cursor: pointer;
+}

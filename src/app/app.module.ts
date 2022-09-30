@@ -21,6 +21,11 @@ import { InterceptorService } from './services/interceptor.service';
 import { TextEditorComponent } from './components/shared/text-editor/text-editor.component';
 import { PortfolioService } from './services/porfolio.service';
 import { SkillsComponent } from './components/portfolio/skills/skills.component';
+import { EducationCardComponent } from './components/portfolio/education-card/education-card.component';
+import { ExperienceCardComponent } from './components/portfolio/experience-card/experience-card.component';
+import { SkillCardComponent } from './components/portfolio/skill-card/skill-card.component';
+import { ProjectsComponent } from './components/portfolio/projects/projects.component';
+import { ProjectCardComponent } from './components/portfolio/project-card/project-card.component';
 
 
 @NgModule({
@@ -38,7 +43,12 @@ import { SkillsComponent } from './components/portfolio/skills/skills.component'
     SignupComponent,
     PortfolioComponent,
     TextEditorComponent,
-    SkillsComponent
+    SkillsComponent,
+    EducationCardComponent,
+    ExperienceCardComponent,
+    SkillCardComponent,
+    ProjectsComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,
