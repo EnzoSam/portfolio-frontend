@@ -1,15 +1,22 @@
 <nav class="navbar">
-    <div class="col-1">
+    <div class="col-2">
+      <span>
+      <a href="/">
+        <img src="../../../../assets/logo.png" alt="">
+      </a> 
+      </span>
+      <span>
       <a href="/">
         <img src="../../../../assets/logo-arg-prog.png" alt="">
-      </a>
+      </a>  
+    </span>   
     </div>
     <div class="col d-flex  justify-content-end">
       <app-social-networks></app-social-networks>
     </div>
     <div class="col-1 d-flex justify-content-end m-0 p-0">
       <i *ngIf="isAuthenticated()" (click)="logout()" class="me-3 fa fa-sign-out" aria-label="Cerrar Sesion"></i>
-      <i *ngIf="isAuthenticated()" class="me-3 fa fa-cog" [routerLink]="routesPaths.settings"></i>
+      <i *ngIf="isAuthenticated()" class="me-3 fa fa-cog" [routerLink]="routesPaths.settings + '/personal-data'"></i>
       <i  *ngIf="!isAuthenticated()" [routerLink]="routesPaths.login"  class="fa fa-sign-in" aria-hidden="true"></i>
     </div>
 </nav>

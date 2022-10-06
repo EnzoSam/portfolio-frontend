@@ -1,0 +1,12 @@
+.card
+{
+    cursor: pointer;
+    background-color: black;
+}
+
+.modal-content
+{
+    min-height: 90vh;
+    background-color: #1A1D22;
+}
+

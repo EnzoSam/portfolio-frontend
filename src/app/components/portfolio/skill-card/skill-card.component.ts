@@ -18,6 +18,7 @@ export class SkillCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.skill && document.getElementsByClassName('progress')[0])
     document.getElementsByClassName('progress')[0].setAttribute('aria-valuenow',this.skill?.level + '');
   }
 

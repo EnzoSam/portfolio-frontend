@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IMilestone } from 'src/app/data/interfaces/imilestone';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-project-card',
@@ -9,8 +10,12 @@ import { IMilestone } from 'src/app/data/interfaces/imilestone';
 export class ProjectCardComponent implements OnInit {
 
   @Input() project?:IMilestone;
+  urlImages:string;
   
-  constructor() { }
+  constructor() { 
+
+    this.urlImages = environment.baseApiImages;
+  }
 
   ngOnInit(): void {
   }

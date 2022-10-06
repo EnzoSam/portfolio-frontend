@@ -2,7 +2,7 @@
     <h1>Lugares</h1>
     <button class="btn btn-success" [routerLink]="['../' + paths.place_new]">Agregar</button>
   
-    <table class="table table-hover">
+    <table class="table table-hover table-dark mt-3">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -17,7 +17,7 @@
           <td>{{p.name}}</td>
           <td>{{p.description}}</td>
           <td> 
-            <i class="fa-solid fa-pen" 
+            <i class="fa-solid fa-pen me-3" 
             [routerLink]="['../' + paths.place_detail , p.id]"></i>
             <i class="fa-solid fa-trash" (click)="delete(p)"></i>
           </td>
