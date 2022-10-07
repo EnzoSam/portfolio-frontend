@@ -1,22 +1,20 @@
 <nav class="navbar">
-    <div class="col-2">
-      <span>
-      <a href="/">
-        <img src="../../../../assets/logo.png" alt="">
-      </a> 
-      </span>
-      <span>
-      <a href="/">
-        <img src="../../../../assets/logo-arg-prog.png" alt="">
-      </a>  
-    </span>   
+  <div class="container-fluid ms-1 ps-1">
+    <div class="col">
+        <a class="col" href="/">
+          <img src="../../../../assets/logo.png" alt="">
+        </a>
+        <a  class="col" href="/">
+          <img src="../../../../assets/logo-arg-prog.png" alt="">
+        </a>
     </div>
-    <div class="col d-flex  justify-content-end">
+    <div class="col-auto me-3">
       <app-social-networks></app-social-networks>
     </div>
-    <div class="col-1 d-flex justify-content-end m-0 p-0">
-      <i *ngIf="isAuthenticated()" (click)="logout()" class="me-3 fa fa-sign-out" aria-label="Cerrar Sesion"></i>
-      <i *ngIf="isAuthenticated()" class="me-3 fa fa-cog" [routerLink]="routesPaths.settings + '/personal-data'"></i>
-      <i  *ngIf="!isAuthenticated()" [routerLink]="routesPaths.login"  class="fa fa-sign-in" aria-hidden="true"></i>
-    </div>
+    <div class="col-auto">
+      <i *ngIf="isAuthenticated()" (click)="logout()" class="fa fa-sign-out" aria-label="Cerrar Sesion"></i>
+      <i *ngIf="isAuthenticated()" class="ms-2 fa fa-cog" [routerLink]="routesPaths.settings + '/personal-data'"></i>
+      <i *ngIf="!isAuthenticated()" [routerLink]="routesPaths.login" class="fa fa-sign-in" aria-hidden="true"></i>
+      </div>
+  </div>
 </nav>

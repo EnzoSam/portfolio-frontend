@@ -25,7 +25,8 @@ export class PersonService extends BaseService{
       profileImage:'',
       profession:'',
       milestones:[],
-      skills:[]
+      skills:[],
+      contacts:[]
     }
   }
 

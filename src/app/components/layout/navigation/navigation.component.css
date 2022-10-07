@@ -1,8 +1,14 @@
 nav{
-    background-color: transparent;
+    background-color: #2D2E32;
 }
 
 img{
     width: 90px;
     height: 50px;    
+}
+
+
+#rowcontainer
+{
+    width: 100%;
 }

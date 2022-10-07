@@ -1,9 +1,4 @@
-<div>
-    <a  href="">
-        <i class="me-3 fa-brands fa-linkedin"></i>
-    </a>
-    <a href="">
-        <i class="me-3 fa-brands fa-twitter"></i>
-    </a>    
-    
-</div>
+<a class="col" *ngFor="let c of portfolio?.contacts"  [href]="c.contact" target="_blank" >
+    <!-- <i class="me-3 fa-brands fa-linkedin"></i> -->
+    <img class="me-1" [src]="urlImages + c.image" [alt]="c.name">
+</a>

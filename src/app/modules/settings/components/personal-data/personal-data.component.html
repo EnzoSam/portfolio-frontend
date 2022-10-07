@@ -1,6 +1,6 @@
 <div class="container mt-1">
     <h1>Datos Personales</h1>
-    <form *ngIf="person" (ngSubmit)="onSubmit()" class="col-4">
+    <form *ngIf="person" (ngSubmit)="onSubmit()" class="col-md-4">
         <div class="mb-3">
             <label for="name" class="form-label">Nombres</label>
             <input type="text" class="form-control" id="nombre" [(ngModel)]="person.name" name="name">

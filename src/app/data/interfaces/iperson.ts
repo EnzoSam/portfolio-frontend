@@ -1,3 +1,4 @@
+import { IContact } from "./icontact";
 import { IMilestone } from "./imilestone";
 import { ISkill } from "./iskills";
 
@@ -11,4 +12,5 @@ export interface IPerson {
     profession:string,
     milestones:IMilestone[],
     skills:ISkill[],
+    contacts:IContact[]
 }

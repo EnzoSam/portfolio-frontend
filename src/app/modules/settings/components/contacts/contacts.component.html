@@ -15,7 +15,7 @@
         <tr *ngFor="let c of contacts">
           <th scope="row">{{c.id}}</th>
           <td>{{c.name}}</td>
-          <td>{{c.type}</td>
+          <td>{{c.type}}</td>
           <td> 
             <i class="fa-solid fa-pen me-3" 
             [routerLink]="['../' + paths.contact_detail , c.id]"></i>

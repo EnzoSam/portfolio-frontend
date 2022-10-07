@@ -1,43 +1,50 @@
 <div class="container-fluid">
 <div class="row">
-    <div class="col-3">
+    <div class="col-md-3">
         <i class="fa fa-bars d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"></i>
 
         <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive"
             aria-labelledby="offcanvasResponsiveLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+            <div class="offcanvas-header  text-bg-dark">
+                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Configuraciones</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas-body text-bg-dark">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="paths.personal_data">Datos Personales</a>
+                    <li class="nav-item" >
+                        <a data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                        class="nav-link active" aria-current="page" [routerLink]="paths.personal_data">Datos Personales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="paths.contacts">Contactos</a>
+                        <a data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                        class="nav-link active" aria-current="page" [routerLink]="paths.contacts">Contactos</a>
                     </li>                    
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="paths.place">Lugares</a>
+                        <a data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                        class="nav-link active" aria-current="page" [routerLink]="paths.place">Lugares</a>
                     </li>                     
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"  [routerLink]="[paths.milestons, milestoneTypes.EDUCATION]">Estudios</a>
+                        <a data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                        class="nav-link active" aria-current="page"  [routerLink]="[paths.milestons, milestoneTypes.EDUCATION]">Estudios</a>
                     </li>   
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="[paths.milestons, milestoneTypes.EXPERIENCE]">Experiencia</a>
+                        <a data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                        class="nav-link active" aria-current="page" [routerLink]="[paths.milestons, milestoneTypes.EXPERIENCE]">Experiencia</a>
                     </li>     
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="[paths.milestons, milestoneTypes.PROJECT]">Proyectos</a>
+                        <a data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                         class="nav-link active" aria-current="page" [routerLink]="[paths.milestons, milestoneTypes.PROJECT]">Proyectos</a>
                     </li>                          
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="paths.skills">Habilidades</a>
+                        <a data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                        class="nav-link active" aria-current="page" [routerLink]="paths.skills">Habilidades</a>
                     </li>                                                     
                 </ul>
             </div>
         </div>
     </div>
-    <div class="col-9">
+    <div class="col-md-9">
         <router-outlet></router-outlet>
     </div>
 </div>
