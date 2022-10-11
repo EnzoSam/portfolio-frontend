@@ -1,9 +1,9 @@
   <div *ngIf="project">
     <div class="card text-bg-dark" >
-      <img data-bs-toggle="modal" 
+      <img *ngIf="project.image && project.image != ''" data-bs-toggle="modal" 
       [attr.data-bs-target]="'#zoomProject' + project.id"
        name="zoomProject{{project.id}}"
-      [src]="urlImages + '/'+ project.image" class="card-img-top rounded-start" alt="...">
+      [src]="urlImages + project.image" class="card-img-top rounded-start" alt="...">
       <div>
         <div class="row g-0">
             <div class="col-md-4">
@@ -29,7 +29,7 @@
       </div>
       <div class="modal-body">
         <img data-bs-toggle="modal" [attr.data-target]="'#zoomProject' + project.id"
-        [src]="urlImages + '/'+ project.image" class="img-fluid rounded-start" alt="...">
+        [src]="urlImages + project.image" class="img-fluid rounded-start" alt="...">
         <div>
           {{project.description}}
         </div>

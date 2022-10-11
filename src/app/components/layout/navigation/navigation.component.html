@@ -14,7 +14,11 @@
     <div class="col-auto">
       <i *ngIf="isAuthenticated()" (click)="logout()" class="fa fa-sign-out" aria-label="Cerrar Sesion"></i>
       <i *ngIf="isAuthenticated()" class="ms-2 fa fa-cog" [routerLink]="routesPaths.settings + '/personal-data'"></i>
-      <i *ngIf="!isAuthenticated()" [routerLink]="routesPaths.login" class="fa fa-sign-in" aria-hidden="true"></i>
+      <i *ngIf="!isAuthenticated()" 
+          [routerLink]="routesPaths.auth" 
+          class="fa fa-sign-in" 
+          data-bs-toggle="tooltip" data-bs-title="Iniciar Sesión"
+          aria-hidden="true"></i>
       </div>
   </div>
 </nav>

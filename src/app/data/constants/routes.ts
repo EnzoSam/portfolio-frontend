@@ -1,8 +1,7 @@
 export const routesPaths = {    
     home: "",
     portfolio:"portfolio",
-    login: "login",
-    logout:"logout",
+    auth: "auth",
     settings:"settings"
   };
 

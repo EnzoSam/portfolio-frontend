@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IPerson } from 'src/app/data/interfaces/iperson';
-import { AuthService } from 'src/app/services/auth.service';
 import { PortfolioService } from 'src/app/services/porfolio.service';
 
 @Component({

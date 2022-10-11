@@ -14,8 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SocialNetworksComponent } from './components/portfolio/social-networks/social-networks.component';
 import { ExperienceComponent } from './components/portfolio/experience/experience.component';
 import { EducationComponent } from './components/portfolio/education/education.component';
-import { LoginComponent } from './components/auth/login/login.component';
-import { SignupComponent } from './components/auth/signup/signup.component';
+import { LoginComponent } from './modules/user/components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
 import { InterceptorService } from './services/interceptor.service';
 import { TextEditorComponent } from './components/shared/text-editor/text-editor.component';
@@ -26,6 +25,7 @@ import { ExperienceCardComponent } from './components/portfolio/experience-card/
 import { SkillCardComponent } from './components/portfolio/skill-card/skill-card.component';
 import { ProjectsComponent } from './components/portfolio/projects/projects.component';
 import { ProjectCardComponent } from './components/portfolio/project-card/project-card.component';
+import { TokenService } from './services/token.service';
 
 
 @NgModule({
@@ -39,8 +39,7 @@ import { ProjectCardComponent } from './components/portfolio/project-card/projec
     SocialNetworksComponent,
     ExperienceComponent,
     EducationComponent,
-    LoginComponent,
-    SignupComponent,
+    LoginComponent,    
     PortfolioComponent,
     TextEditorComponent,
     SkillsComponent,
@@ -60,6 +59,7 @@ import { ProjectCardComponent } from './components/portfolio/project-card/projec
   providers: [
     AppRoutingModule,
     PortfolioService,
+    TokenService,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy

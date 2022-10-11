@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routesPaths } from 'src/app/data/constants/routes';
-import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavigationComponent implements OnInit {
 
   routesPaths: any;
-  constructor(private _authService: AuthService,
+  constructor(private _authService: TokenService,
     private _router: Router) {
     this.routesPaths = routesPaths;
   }
@@ -24,7 +24,7 @@ export class NavigationComponent implements OnInit {
   }
 
   logout() {
-    this._authService.logout();
+    this._authService.logOut();
     this._router.navigate(['']).then(() => {
       window.location.reload();
     });

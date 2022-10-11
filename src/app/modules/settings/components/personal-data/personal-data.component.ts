@@ -38,7 +38,7 @@ export class PersonalDataComponent implements OnInit {
 
     this._personService.save(this.person).subscribe(response=>
       {
-          console.log(response);
+          alert("Guardado correctamente");
       },
       error=>{
         console.log(error);

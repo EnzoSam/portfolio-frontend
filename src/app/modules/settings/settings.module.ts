@@ -18,6 +18,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { ContactService } from './services/contact.service';
+import { InterceptorService } from 'src/app/services/interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -48,7 +50,10 @@ import { ContactService } from './services/contact.service';
     MilestoneService,
     PlacesService,
     SkillsService,
-    ContactService
+    ContactService,
+    {
+      provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
+    }
   ] 
 })
 export class SettingsModule { }

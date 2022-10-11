@@ -21,14 +21,13 @@ export class PortfolioService {
 
   public getPortfolio():Observable<IPortfolio>
   {
-    return this._http.get<IPortfolio>(this.apiUrl + "portfolio",{headers:this.headers});
+    return this._http.get<IPortfolio>(this.apiUrl + "auth/portfolio",{headers:this.headers});
   }
 
   public  loadPortfolio()
   {
      this.getPortfolio().subscribe(portfolio=>
       {
-        console.log(portfolio);
         this.portfolioPerson.next(portfolio);
       },
       error =>

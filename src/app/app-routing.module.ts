@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { routesPaths } from './data/constants/routes';
 import { DefaultErrorComponent } from './components/shared/default-error/default-error.component';
 import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
-import { LoginComponent } from './components/auth/login/login.component';
-
+import { GuardService as guard} from './services/guard.service';
 
 const routes: Routes = [
   {
@@ -16,17 +15,21 @@ const routes: Routes = [
     path:routesPaths.portfolio,
     component:PortfolioComponent
   },
-  {
-    path:routesPaths.login,
-    component:LoginComponent
-  },  
   { path: routesPaths.settings,
+    canActivate: [guard], data: { expectedRol: ['admin', 'user']},
   children:[
       {
           path:'',
           loadChildren: ()=> import ('./modules/settings/settings.module').then((m)=>m.SettingsModule)
       }
   ]},   
+  { path: routesPaths.auth,
+    children:[
+        {
+            path:'',
+            loadChildren: ()=> import ('./modules/user/user.module').then((m)=>m.UserModule)
+        }
+    ]},   
   {
     path:'**',
     component:DefaultErrorComponent
