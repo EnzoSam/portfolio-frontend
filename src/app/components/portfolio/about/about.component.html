@@ -1,6 +1,14 @@
 <div class="container-fluid about pt-3 col-md-9">
-    <h1 class="d-flex justify-content-center">Sobre mi</h1>
-    <article class="p-5" *ngIf="person">
-        {{person.about}}
-    </article>
+    <div class="row">
+        <div class="col-md-5">
+            <app-skills></app-skills>
+        </div>        
+        <div class="col-md-4">
+            <h1 class="d-flex justify-content-center">Sobre mi</h1>
+            <article class="p-1" *ngIf="person">
+                {{person.about}}
+            </article>
+        </div>       
+
+    </div>
 </div>

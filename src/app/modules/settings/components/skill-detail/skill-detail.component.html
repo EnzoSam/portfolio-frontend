@@ -1,9 +1,13 @@
 <div class="container mt-1">
     <h1>Habilidad</h1>
-    <form *ngIf="skill" (ngSubmit)="onSubmit()" class="col-4">
+    <form #form="ngForm" *ngIf="skill" (ngSubmit)="onSubmit()" class="col-4">
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)]="skill.name" name="name">
+            <input type="text" class="form-control" id="nombre"  #name="ngModel" required
+                [(ngModel)]="skill.name" name="name">
+            <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
+                El nombre es requerido
+            </small>                 
         </div>
         <div class="mb-3">
             <label for="level" class="form-label">Nivel</label>
@@ -15,11 +19,11 @@
         </div>                
         <div class="mb-3">
             <div *ngIf="skill.image">
-              <img [src]="urlImages +'/'+ skill.image" class="avatar_edit">
+              <img [src]="urlImages + skill.image" class="avatar_edit">
             </div>
           </div>         
         <div class="mb-3">
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-primary"  [disabled]="form.invalid">Guardar</button>
         </div>
     </form>
 </div>

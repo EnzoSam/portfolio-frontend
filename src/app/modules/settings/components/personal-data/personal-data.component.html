@@ -1,17 +1,29 @@
 <div class="container mt-1">
     <h1>Datos Personales</h1>
-    <form *ngIf="person" (ngSubmit)="onSubmit()" class="col-md-4">
+    <form #form="ngForm" *ngIf="person" (ngSubmit)="onSubmit()" class="col-md-4">
         <div class="mb-3">
             <label for="name" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)]="person.name" name="name">
+            <input type="text" class="form-control" id="nombre" #name="ngModel" required  
+                [(ngModel)]="person.name" name="name">
+            <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
+                El nombre es requerido
+            </small>
         </div>
         <div class="mb-3">
             <label for="lastname" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="lastname" [(ngModel)]="person.lastName" name="lastname">
+            <input type="text" class="form-control" id="lastname" #lastname="ngModel" required 
+             [(ngModel)]="person.lastName" name="lastname">
+             <small *ngIf="!lastname.valid && lastname.touched" class="invalid-feedback d-block">
+                El apellido es requerido
+            </small>             
         </div>
         <div class="mb-3">
             <label for="profession" class="form-label">Profesion</label>
-            <input type="text" class="form-control" id="profession" [(ngModel)]="person.profession" name="profession">
+            <input type="text" class="form-control" id="profession" #profession="ngModel" required 
+             [(ngModel)]="person.profession" name="profession">
+             <small *ngIf="!profession.valid && profession.touched" class="invalid-feedback d-block">
+                La profesion es requerida
+            </small>               
         </div>
         <div class="mb-3">
             <label for="address" class="form-label">Direccion</label>
@@ -31,7 +43,7 @@
             </div>
           </div>                   
         <div class="mb-3">
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-primary" [disabled]="form.invalid">Guardar</button>
         </div>
     </form>
 </div>

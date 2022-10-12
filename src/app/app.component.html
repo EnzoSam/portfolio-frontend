@@ -1,1 +1,12 @@
-<app-skeleton></app-skeleton>
+
+<app-skeleton *ngIf="portfolio" ></app-skeleton>
+<div id="loader" *ngIf="!portfolio && !status " class="position-absolute translate-middle top-50 start-50">
+    <div class="spinner-border text-success"  style="width: 10rem; height: 10rem;" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+</div>
+<div *ngIf="!portfolio && status && !status.ok" class="position-absolute translate-middle top-50 start-50">
+      <h1 class="text-danger">Error</h1>
+      <h6 *ngIf="status.data">{{status.data.statusText}}</h6>
+</div>
+

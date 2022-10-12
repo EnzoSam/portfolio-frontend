@@ -4,6 +4,7 @@ import { IPerson } from '../data/interfaces/iperson';
 import {environment} from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IPortfolio } from '../data/interfaces/iportfolio';
+import { IStatus } from '../data/interfaces/istatus';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class PortfolioService {
   apiUrl:string;
   headers;
   private portfolioPerson: any = new BehaviorSubject<any>(undefined);
+  private siteStatus: any = new BehaviorSubject<any>(undefined);
 
   constructor(private _http: HttpClient) { 
     this.apiUrl = environment.baseApiUrl;
@@ -32,6 +34,7 @@ export class PortfolioService {
       },
       error =>
       {
+        this.siteStatus.next({ok:false,data:error});
         console.log(error);
       })
   }
@@ -41,4 +44,8 @@ export class PortfolioService {
     return this.portfolioPerson.asObservable();
   }
 
+  onSiteStatusChanged(): Observable<IStatus>
+  {
+    return this.siteStatus.asObservable();
+  }
 }

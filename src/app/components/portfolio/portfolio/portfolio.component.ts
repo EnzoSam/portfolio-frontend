@@ -15,7 +15,6 @@ export class PortfolioComponent implements OnInit,OnDestroy {
   personSubscription:Subscription;
   constructor(private _portFolioService: PortfolioService) { 
 
-    _portFolioService.loadPortfolio();
     this.personSubscription = _portFolioService.onPortfolioChanged().subscribe(value=>this.portfolio = value);
   }
 

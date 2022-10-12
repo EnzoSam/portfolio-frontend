@@ -1,13 +1,18 @@
 <div class="container mt-1">
     <h1>{{getTypeName()}}</h1>
-    <form *ngIf="milestone" (ngSubmit)="onSubmit()" class="col-4">
+    <form  #form="ngForm" *ngIf="milestone" (ngSubmit)="onSubmit()" class="col-4">
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)]="milestone.name" name="name">
+            <input type="text" class="form-control" id="nombre"  #name="ngModel" required 
+                [(ngModel)]="milestone.name" name="name">
+            <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
+                El nombre es requerido
+            </small>                  
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descripcion</label>
-            <input type="text" class="form-control" id="description" [(ngModel)]="milestone.description" name="description">
+            <input type="text" class="form-control" id="description"  #description="ngModel" 
+            [(ngModel)]="milestone.description" name="description">
         </div>
         <div class="mb-3">
             <label for="place" class="form-label">Lugar</label>
@@ -33,7 +38,7 @@
             </div>
           </div>         
         <div class="mb-3">
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-primary" [disabled]="form.invalid">Guardar</button>
         </div>
     </form>
 </div>
