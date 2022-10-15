@@ -3,7 +3,7 @@
         <h1 class="display-1">{{portfolio.person.name + ' ' + portfolio.person.lastName}} </h1>
         <h2 class="display-3">{{portfolio.person.profession}}</h2>        
     </div>
-    <button class="btn btn-info">Contactar</button>
+    <a [href]="whatsapp" class="btn  btn-outline-info btn-lg">Contactar</a>
     <div id="imgcontainer">
         <img class="profileimg" [src]="urlImages +  portfolio.person.profileImage" alt="">
             <app-skill-animation></app-skill-animation>

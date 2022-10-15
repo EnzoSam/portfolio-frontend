@@ -2,20 +2,18 @@
 {
     background-color: #2D2E32;
     height: 700px;    
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
 }
 
 .names
 {
     position: absolute;
     top: 100px;
-    left: 100px
+    left: 30px
 }
 
 img{
     border-radius: 100%;
+
 }
 
 .skillsdetails
@@ -30,7 +28,6 @@ img{
     position: absolute;
     top: 0;
     z-index: 1;
-    border: red 1px;
     width: 700px;
 }
 
@@ -53,10 +50,58 @@ app-skill-animation
     display: flex;
 }
 
-button{
+a{
     position: absolute;
     left: 400px;
     top: 60%;
-    width: 200px;
-    height: 65px;
+
 }
+
+@media (max-width: 400px) {
+
+    .banner
+    {
+        padding-left: 20px;
+        height: 90vh; 
+    }
+
+    .names
+    {
+        display: block;
+        width: 100%;
+        margin-left: 5px;
+    }
+
+    #imgcontainer
+    {
+        display: block;
+        background: rgb(39,41,45);
+        background: linear-gradient(180deg, rgba(39,41,45,1) 0%, rgba(45,46,50,1) 75%);
+        border-radius: 100%;
+        height: 200px;
+        max-width: 250px;
+        left: 0px;
+        top: 40%;
+    }    
+
+    a{
+        margin-left: 10px;
+        position: relative;
+        left: 0px;
+        top: 30%;
+      
+    }    
+
+    .profileimg
+    {
+        width: 250px;
+        display: block;
+        z-index: 0;
+    }    
+
+    app-skill-animation
+    {
+        position: absolute;
+        top: 30px;
+    }    
+ }
