@@ -26,6 +26,7 @@ import { SkillCardComponent } from './components/portfolio/skill-card/skill-card
 import { ProjectsComponent } from './components/portfolio/projects/projects.component';
 import { ProjectCardComponent } from './components/portfolio/project-card/project-card.component';
 import { TokenService } from './services/token.service';
+import { SkillAnimationComponent } from './components/portfolio/skill-animation/skill-animation.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { TokenService } from './services/token.service';
     ExperienceCardComponent,
     SkillCardComponent,
     ProjectsComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    SkillAnimationComponent
   ],
   imports: [
     BrowserModule,

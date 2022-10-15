@@ -1,0 +1,6 @@
+<div class="ring" (click)="scrollTo('skillsdetails')">
+    <div [class]="'dot' + ' dot--' + (i+1)"
+     *ngFor="let s of principalSkills;index as i" >
+        <img *ngIf="s.image" img [src]="urlImages + s.image" alt=""  (click)="scrollTo('skillsdetails')">
+    </div>
+</div>

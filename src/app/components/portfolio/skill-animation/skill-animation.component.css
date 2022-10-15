@@ -1,0 +1,65 @@
+
+img
+{
+    max-width: 40px;
+}
+
+@keyframes rotateClockwise {
+    100% {
+        transform: rotate(360deg);
+   }
+}
+@keyframes rotateCounterClockwise {
+    100% {
+        transform: rotate(-360deg);
+   }
+}
+.ring {
+    position: relative;
+    left: 50%;
+    top: 50px;
+    margin-left: -100px;
+    height: 200px;
+    width: 200px;
+   /* border: 10px solid #666;*/
+    border-radius: 50%;
+}
+.dot {
+    position: absolute;
+    height: 250px;
+    width: 40px;
+    top: -25px;
+    left: 50%;
+    margin-left: -20px;
+}
+.dot:before {
+    display: block;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+}
+.dot--1 {
+    animation: rotateClockwise 5s linear infinite;
+}
+
+.dot--2 {
+    animation: rotateCounterClockwise 5s linear infinite;
+}
+
+.dot--3 {
+    animation: rotateClockwise 4s linear infinite;
+}
+
+.dot--4 {
+    animation: rotateCounterClockwise 4s linear infinite;
+}
+
+.dot--5 {
+    animation: rotateClockwise 3s linear infinite;
+}
+
+.dot--6 {
+    animation: rotateCounterClockwise 3s linear infinite;
+}

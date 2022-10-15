@@ -48,4 +48,9 @@ export class PortfolioService {
   {
     return this.siteStatus.asObservable();
   }
+
+  setNewState(state:IStatus):void
+  {
+    this.siteStatus.next(state);
+  }
 }

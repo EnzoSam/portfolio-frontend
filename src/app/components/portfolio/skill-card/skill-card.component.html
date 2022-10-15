@@ -1,10 +1,12 @@
-<div *ngIf="skill" class="col-2">
+<div *ngIf="skill" class="col me-5 mb-4">
     <div class="row">
         <h5>{{skill.name}}</h5>
     </div>
     <div class="progress">
         <div class="progress-bar bg-info" role="progressbar" 
-        aria-label="Info example" style="width: 80%" 
-        aria-valuenow="1" aria-valuemin="0" aria-valuemax="10"></div>
+        aria-label="Info example" 
+        [style.width]="(skill.level * 10)+'%'"
+        [attr.aria-valuenow]="skill.level + ''"
+         aria-valuemin="0" aria-valuemax="10"></div>
     </div>
 </div>

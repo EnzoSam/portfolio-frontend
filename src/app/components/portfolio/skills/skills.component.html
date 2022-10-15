@@ -1,4 +1,6 @@
-<div class="container-fluid col-8 pt-3">
-    <h1 class="d-flex justify-content-center">Habilidades</h1>
-    <app-skill-card [skill]="s"  *ngFor="let s of portfolio?.skills" ></app-skill-card>
+<div id="skillsdetails" class="container-fluid col-8 mt-5">
+    <h1 class="d-flex justify-content-center mb-5">Habilidades</h1>
+    <div class="row">
+        <app-skill-card class="col-md-4" [skill]="s" *ngFor="let s of portfolio?.skills"></app-skill-card>
+    </div>
 </div>
