@@ -5,6 +5,7 @@ import {environment} from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IPortfolio } from '../data/interfaces/iportfolio';
 import { IStatus } from '../data/interfaces/istatus';
+import { IContact } from '../data/interfaces/icontact';
 
 @Injectable({
   providedIn: 'root'
@@ -53,4 +54,5 @@ export class PortfolioService {
   {
     this.siteStatus.next(state);
   }
+
 }
