@@ -6,6 +6,10 @@ export const environment = {
   production: false,
   baseApiUrl: 'http://localhost:8080/api/' ,
   baseApiImages: 'http://localhost:8080/images/' ,
+  apiKey: "AIzaSyCLhctqZ4ZjWg5c2BYw4YelEqLxX3v8Cro",
+  authDomain: "portfolio-fb9ed.firebaseapp.com",
+  projectId: "portfolio-fb9ed",
+  storageBucket: "portfolio-fb9ed.appspot.com", 
 };
 
 /*

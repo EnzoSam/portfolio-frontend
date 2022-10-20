@@ -12,7 +12,6 @@ export class GuardService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const expectedRol = route.data.expectedRol;
     const roles = this.tokenService.getAuthorities();
-    console.log(roles);
     this.realRol = 'user';
     roles.forEach((rol: string) => {
       if (rol === 'ROLE_ADMIN') {

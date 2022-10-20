@@ -1,6 +1,24 @@
 import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { initializeApp } from 'firebase/app';
+import { getStorage,ref,uploadBytes  } from "firebase/storage";
+import { environment } from 'src/environments/environment';
+
+
+
+
+const firebaseConfig = {
+  apiKey: environment.apiKey,
+  authDomain:environment.authDomain,
+  projectId: environment.projectId,
+  storageBucket: environment.storageBucket,
+};
+
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+const storageRef = ref(storage,'images');
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +33,12 @@ export class UpladFileService {
     return this._http.post<any>(url,form);
   }
 
+  uploadFirebase(file:File):Promise<any>
+  {
+      const id = Math.random().toString(36).substring(2);
+      const spaceRef = ref(storageRef, id + '-' + file.name);    
+      return uploadBytes(spaceRef, file);
+  }
 
   uploadOld(file: File, url: string): Observable<HttpEvent<any>> {
 
