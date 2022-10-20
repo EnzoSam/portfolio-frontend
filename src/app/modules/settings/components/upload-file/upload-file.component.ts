@@ -34,7 +34,7 @@ export class UploadFileComponent implements OnInit {
   }
 
   onFileChange(event: any) {
-    if (event.target.files && event.target.files.count() > 0) {
+    if (event.target.files && event.target.files.length > 0) {
       const file: File = event.target.files[0];
       this.uploadService.uploadFirebase(file).then((snapshot) => {
         this.urlImagenSubida = snapshot.metadata.name + "?alt=media";
