@@ -22,11 +22,16 @@
         </div>        
         <div class="mb-3">
             <label for="fromDate" class="form-label">Desde</label>
-            <input type="date" class="form-control" id="fromDate" [(ngModel)]="milestone.fromDate" name="fromDate">
+            <input type="date" class="form-control" id="fromDate" 
+                    [ngModel]="milestone.fromDate | date:'yyyy-MM-dd'" 
+                    (ngModelChange)="milestone.fromDate = $event" name="fromDate">
         </div>    
         <div class="mb-3">
             <label for="toDate" class="form-label">Hasta</label>
-            <input type="date" class="form-control" id="toDate" [(ngModel)]="milestone.toDate" name="toDate">
+            <input type="date" class="form-control" id="toDate" 
+            [ngModel]="milestone.toDate  | date:'yyyy-MM-dd'" 
+            (ngModelChange)="milestone.toDate = $event"
+             name="toDate">
         </div>                
         <div class="mb-3">
             <label  class="form-label">Imagen</label>

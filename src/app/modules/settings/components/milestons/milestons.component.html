@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h1>Estudios</h1>
+  <h1>{{getTypeName()}}</h1>
   <button class="btn btn-success" [routerLink]="['../../' + paths.milestone_new ,type]">Agregar</button>
 
   <table class="table table-hover table-dark mt-3">
@@ -14,7 +14,7 @@
     <tbody>
       <tr *ngFor="let m of milestones">
         <th scope="row">{{m.id}}</th>
-        <td>{{m.fromDate}}</td>
+        <td>{{m.fromDate |  date: 'dd/MM/yyyy'}}</td>
         <td>{{m.name}}</td>
         <td> 
           <i class="fa-solid fa-pen me-3" 

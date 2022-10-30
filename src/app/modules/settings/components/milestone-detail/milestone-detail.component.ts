@@ -83,8 +83,6 @@ export class MilestoneDetailComponent implements OnInit {
       {
         this.milestone = data;
         this.type = this.milestone?.type;
-
-        console.log(this.milestone);
       },
       error=>{
         console.log(error);
@@ -110,6 +108,8 @@ export class MilestoneDetailComponent implements OnInit {
       return "Educacion";
     else if (this.type == milestones_type.EXPERIENCE)
       return "Experiencia";
+    else if (this.type == milestones_type.PROJECT)
+      return "Proyectos";      
     else return "";
   }
 

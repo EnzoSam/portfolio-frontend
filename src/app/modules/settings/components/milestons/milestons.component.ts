@@ -60,4 +60,13 @@ export class MilestonsComponent implements OnInit {
     });
   }
 
+  getTypeName() {
+    if (this.type == milestones_type.EDUCATION)
+      return "Educacion";
+    else if (this.type == milestones_type.EXPERIENCE)
+      return "Experiencia";
+    else if (this.type == milestones_type.PROJECT)
+      return "Proyectos";      
+    else return "";
+  }  
 }
